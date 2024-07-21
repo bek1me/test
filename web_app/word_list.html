@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="/web_app/assets/css/styles.css">
+    <link rel="stylesheet" href="/web_app/assets/css/word.css">
+    <title>Linglo</title>
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Linglo</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="/" class="nav__link">
+                            <i class='bx bx-home-alt nav__icon'></i>
+                            <span class="nav__name">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/add_words" class="nav__link">
+                            <i class='bx bx-add-to-queue nav__icon'></i>
+                            <span class="nav__name">Add Words</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/word_list" class="nav__link active-link">
+                            <i class='bx bx-list-ul nav__icon'></i>
+                            <span class="nav__name">Word List</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/profile" class="nav__link">
+                            <i class='bx bx-user nav__icon'></i>
+                            <span class="nav__name">Profile</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <img src="" alt="img" class="nav__img">
+        </nav>
+    </header>
+    <main>
+        <section class="container section section__height" id="home">
+            <h2 class="section__title">Word List</h2>
+            <article id="article-rating">
+                <header id="article-rating-header" class="article-header">
+                    <h1>Yaqinda qo'shilgan so'zlar<br>
+                        <span>Bu yerda 200 dan o'rtiq so'z bor</span>
+                    </h1>
+                </header><br>
+                <div class="word-list">
+                    <ul class="word-list">
+                        {% for word in words %}
+                        <li class="word-card" data-wid="{{ word[0] }}">
+                            <a href="" data-wid="{{ word[0] }}">
+                                <div class="word">
+                                    <span class="spelling">{{ word[1] }}</span> 
+                                    <span class="part-of-speech">{{ word[2] }}</span>
+                                </div>
+                                <div class="translations">
+                                    <div class="trs" data-wid="{{ word[0] }}">
+                                        <span>{{ word[2] }}</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="marks">
+                                <div class="mark" data-cefr="{{ word[3] }}">
+                                </div>
+                                <div class="mark" data-rating="{{ word[4] }}">
+                                </div>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </article>
+        </section>
+    </main>
+    <script src="/web_app/assets/js/main.js"></script>
+</body>
+</html>

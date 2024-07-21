@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="/web_app/assets/css/styles.css">
+    <title>Linglo</title>
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Linglo</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="/" class="nav__link">
+                            <i class='bx bx-home-alt nav__icon'></i>
+                            <span class="nav__name">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/add_words" class="nav__link active-link">
+                            <i class='bx bx-add-to-queue nav__icon'></i>
+                            <span class="nav__name">Add Words</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/word_list" class="nav__link">
+                            <i class='bx bx-list-ul nav__icon'></i>
+                            <span class="nav__name">Word List</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/profile" class="nav__link">
+                            <i class='bx bx-user nav__icon'></i>
+                            <span class="nav__name">Profile</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <img src="" alt="img" class="nav__img">
+        </nav>
+    </header>
+    <main>
+        <section class="container section section__height" id="home">
+            <h2 class="section__title">Add Words</h2>
+            <form id="addWordForm" action="/add_word/" method="post">
+                <label for="english">English word:</label>
+                <input type="text" id="english" name="english" required>
+    
+                <label for="uzbek">Uzbek translation:</label>
+                <input type="text" id="uzbek" name="uzbek" required>
+    
+                <label for="ielts_level">IELTS group:</label>
+                <select id="ielts_level" name="ielts_level" required>
+                    <option value="">Select group</option>
+                    <option value="A1">A 1</option>
+                    <option value="A2">A 2</option>
+                    <option value="B1">B 1</option>
+                    <option value="B2">B 2</option>
+                    <option value="C1">C 1</option>
+                    <option value="C2">C 2</option>
+                </select><br>
+    
+                <button type="submit" class="noselect">Add words</button>
+            </form>
+        </section>
+    </main>
+    <script src="/web_app/assets/js/main.js"></script>
+</body>
+</html>
